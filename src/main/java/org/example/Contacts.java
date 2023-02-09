@@ -17,7 +17,7 @@ public class Contacts {
 
 }
 class Contactsops{
-    Logger l= Logger.getLogger("com.api.jar");
+    Logger l= Logger.getLogger("com");
     Linked list[] = new Linked[10];
     void addElement(String name, String number, String email) {
         int ph = number.length();
@@ -65,7 +65,7 @@ class Contactsops{
 
 }
 class Linked{
-    Logger l= Logger.getLogger("com.api.jar");
+    Logger l= Logger.getLogger("com.api");
         Contacts rootNode=null;
     void addContact(String name, String number, String email){
         Contacts newNode=new Contacts(name, number, email);
