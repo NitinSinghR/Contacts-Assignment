@@ -18,7 +18,7 @@ public class Contacts {
 }
 class Contactsops{
     Logger l= Logger.getLogger("com");
-    Linked list[] = new Linked[10];
+    Linked[] list = new Linked[10];
     void addElement(String name, String number, String email) {
         int ph = number.length();
         int index1 = Integer.parseInt(String.valueOf( number.charAt(0)));
@@ -129,19 +129,19 @@ class Contactlist{
                 case 1 -> {
                     l.info("Enter the name");
                     String s1 = sc.next();
-                    l.info("Enter the number");
+                    l.info("Enter the number of contact ");
                     String s2 = sc.next();
                     l.info("Enter the email");
                     String s3 = sc.next();
                     c.addElement(s1, s2, s3);
                 }
                 case 2 -> {
-                    l.info("Enter the number");
+                    l.info("Enter the number to remove ");
                     String s2 = sc.next();
                     c.deleteElement(s2);
                 }
                 case 3 -> {
-                    l.info("Enter the number");
+                    l.info("Enter the number to search ");
                     String s2 = sc.next();
                     c.searchElement(s2);
                 }
