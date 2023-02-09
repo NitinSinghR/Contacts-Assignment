@@ -5,9 +5,9 @@ import java.util.logging.Logger;
 
 public class Contacts {
 
-    public String name;
-    public String number;
-    public String email;
+    String name;
+    String number;
+    String email;
     Contacts nextNode;
     public Contacts(String name,String number,String email){
         this.name=name;
@@ -28,8 +28,6 @@ class Contactsops{
             list[index] = new Linked();
         }
         list[index].addContact(name, number, email);
-
-        Contacts n = new Contacts(name, number, email);
     }
     void deleteElement(String number){
         int ph = number.length();
@@ -120,7 +118,7 @@ class Contactlist{
 
 
     public static void main(String[] args) {
-        int ch =0;
+        int ch;
         Scanner sc=new Scanner(System.in);
         Contactsops c=new Contactsops();
         Logger l= Logger.getLogger("com.api.jar");
@@ -128,33 +126,30 @@ class Contactlist{
             l.info("Enter your Choice\n1. Add contacts\n2.Remove Contact\n3.Search Contact\n4.Print Contacts");
             ch= sc.nextInt();
             switch (ch) {
-                case 1: {
+                case 1 -> {
                     l.info("Enter the name");
-                    String s1=sc.next();
+                    String s1 = sc.next();
                     l.info("Enter the number");
-                    String s2=sc.next();
+                    String s2 = sc.next();
                     l.info("Enter the email");
-                    String s3=sc.next();
-                    c.addElement(s1,s2,s3);
-                    break;
+                    String s3 = sc.next();
+                    c.addElement(s1, s2, s3);
                 }
-                case 2: {
+                case 2 -> {
                     l.info("Enter the number");
-                    String s2=sc.next();
+                    String s2 = sc.next();
                     c.deleteElement(s2);
-                    break;
                 }
-                case 3: {
+                case 3 -> {
                     l.info("Enter the number");
-                    String s2=sc.next();
+                    String s2 = sc.next();
                     c.searchElement(s2);
-                    break;
                 }
-                case 4:{
+                case 4 -> {
                     c.printElements();
                     break;
                 }
-                default: {
+                default -> {
                     sc.close();
                     System.exit(0);
                 }
